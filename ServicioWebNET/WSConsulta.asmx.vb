@@ -30,13 +30,13 @@ Public Class WSConsulta
     End Function
 
     <WebMethod(Description:="Insertar datos en la tabla Marca")>
-    Public Function InsertarMarca(Marca_Id As String, Marca_Nombre As String) As String
+    Public Function InsertarMarca(Marca_Id As Integer, Marca_Nombre As String) As String
         conexion.Open()
         'Consulta: Insert into Marca values (Marca_Id,Marca_Nombre)
         comando = New SqlCommand("Insert into Marca values (" & CInt(Marca_Id) & ", '" & Marca_Nombre & "' )", conexion)
         comando.ExecuteNonQuery()
         conexion.Close()
-        Return "Registro Creado"
+        Return "Registro Creados"
     End Function
 
 
